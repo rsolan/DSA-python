@@ -73,3 +73,125 @@ Write a function to calculate the factorial of a number using a loop.
 
 """
 
+
+# 412 lc https://leetcode.com/problems/fizz-buzz/description/
+def fizzBuzz():
+    """
+    :type n: int
+    :rtype: List[str]
+    """
+    n = 5
+    lis = []
+    for i in range(1,n+1):
+        if i % 3 == 0 and i % 5 == 0:
+            lis.append("FizzBuzz")
+        elif i % 3  == 0:
+            lis.append("Fizz")
+        elif i % 5 == 0:
+            lis.append("Buzz")
+        else:
+            lis.append(str(i))
+    print(lis)     
+
+def greatest_threeno():
+    a = int(input("enter first no : "))
+    b = int(input("enter second no : "))
+    c = int(input("enter third no : "))
+    if a>b:
+        if a>c:
+            print(f"among {a} , {b} , {c} - {a} is greatest")
+        else:
+            print(f"among {a} , {b} , {c} - {c} is greatest")
+    else:
+        if b>c:
+            print(f"among {a} , {b} , {c} - {b} is greatest")
+        else:
+            print(f"among {a} , {b} , {c} - {c} is greatest")
+
+
+def greatest_threeno2():
+    a = int(input("enter first no : "))
+    b = int(input("enter second no : "))
+    c = int(input("enter third no : "))
+    if a>b and a>c:
+        print(f"among {a} , {b} , {c} - {a} is greatest")
+    elif b>c:
+        print(f"among {a} , {b} , {c} - {b} is greatest")
+    else:
+        print(f"among {a} , {b} , {c} - {c} is greatest")
+
+def count_vowel():
+    inp = input("enter a string : ")
+    count = 0
+    for i in inp:
+        if (i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u'): #TAKE CARE OF uppercase also
+            count = count+1
+    print(count)
+
+def count_vowel2():
+    inp = input("enter a string : ")
+    vow = "aeiou"
+    count = 0
+    # vow = "aeiouAEIOU"
+    for ch in inp:
+        if ch.lower() in vow:
+            count+=1
+    print(count)
+            
+            
+            
+
+def check_palindrome():
+    inp = input("enter a string to check pal : ")
+    n = len(inp)
+    flag = 1
+    j = -1
+    for i in range(0,n):
+        if inp[i].lower() != inp[j].lower():
+            flag = 0
+            break
+        j = j-1
+        
+    if flag:
+        print(f" string =  {inp}  is palindrome")
+    else:
+        print(f" string =  {inp}  is NOT palindrome")
+
+def check_palindrome2():
+    inp = input("enter a string to check pal : ")
+    inp = inp.lower()
+    n = len(inp)
+    for i in range(n//2):  # use of floor division n//2
+        if inp[i] != inp[n-i-1]:  # imp ----------------- i sets for n-i-1
+            return False
+    return True
+
+def factorial_loop():
+    no = int(input("enter the no to calculate factorial : "))
+    fact = 1
+    if no == 0: # take care of edge case
+        print(f"factorial of {no} is " , 1)
+    else:
+        for i in range(1,no+1):
+            fact = fact * i
+        print(f"factorial of {no} is " , fact)
+        
+        
+# fizzBuzz()
+# greatest_threeno()
+# greatest_threeno2()
+# count_vowel()
+# count_vowel2()
+# check_palindrome()
+
+# if check_palindrome2():
+#     print("string is palindrome")
+# else:
+#     print(" string is NOT palindrome")
+# OP- 
+# enter a string to check pal : raceCAR
+# string is palindrome
+
+
+# factorial_loop()
+
