@@ -36,7 +36,30 @@ def sum_list():
     print("sum of list = ", sum)
 
 def calculator():
-    pass
+    a = int(input("enter first no : "))
+    b = int(input("enter second no : "))
+
+    print("""calculator, 
+          1.addition
+          2.subtarction
+          3.multiplication
+          4.division""")
+
+    opt = int(input("press : 1,2,3 or 4 -> "))
+    if opt == 1:
+        print(a+b)
+    elif opt == 2:
+        print(a-b)
+    elif opt ==3:
+        print(a*b)
+    elif opt == 4:
+        if b == 0:
+            print("cant divide with 0")
+        else:
+            print(a/b)
+    else:
+        print("wrong choice")
+
 
 def reverse_string():
     inp_string = input(" ENTER A STRING TO REVERSE:")
@@ -108,7 +131,6 @@ def greatest_threeno():
         else:
             print(f"among {a} , {b} , {c} - {c} is greatest")
 
-
 def greatest_threeno2():
     a = int(input("enter first no : "))
     b = int(input("enter second no : "))
@@ -119,6 +141,9 @@ def greatest_threeno2():
         print(f"among {a} , {b} , {c} - {b} is greatest")
     else:
         print(f"among {a} , {b} , {c} - {c} is greatest")
+
+
+
 
 def count_vowel():
     inp = input("enter a string : ")
@@ -138,8 +163,7 @@ def count_vowel2():
             count+=1
     print(count)
             
-            
-            
+
 
 def check_palindrome():
     inp = input("enter a string to check pal : ")
@@ -165,6 +189,8 @@ def check_palindrome2():
         if inp[i] != inp[n-i-1]:  # imp ----------------- i sets for n-i-1
             return False
     return True
+
+
 
 def factorial_loop():
     no = int(input("enter the no to calculate factorial : "))
