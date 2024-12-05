@@ -1,0 +1,25 @@
+def countwords():
+    s="abc"
+
+    count = 1
+    op =""
+    for i in s:       
+        if i == " ":
+            print(op)
+            op=""
+            count+=1
+        else:
+            op = op + i
+    print(op)
+    print(count)
+
+
+            
+    
+
+
+    
+        
+
+countwords()
+# find the no of words and print those words line by line
