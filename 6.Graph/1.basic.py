@@ -17,3 +17,15 @@ class Solution:
             adj_list[v].append(u)
             
         return adj_list
+
+
+# 1.we are given adj matrix - create adj_list out of it - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+        n = len(isConnected)
+        m = len(isConnected[0])
+        adj_list =[[] for i in range(n)]
+        for i in range(n):
+            for j in range(m):
+                if i!=j and isConnected[i][j]==1:
+                    adj_list[i].append(j)
+
+        print(adj_list) #- take care can be 0 or 1 indexed - choose/stick to one of them
