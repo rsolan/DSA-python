@@ -21,3 +21,25 @@ class Solution:
                     q.append(i)
                     
         return bfs
+
+
+
+class Solution:
+    
+    #Function to return a list containing the DFS traversal of the graph.
+    def dfsOfGraph(self, adj):
+        # code here
+        
+        def dfs_fun(node):
+            vis[node] = 1
+            dfs.append(node)
+            # traverse all neighbours - but hsould not be visited already
+            for i in adj[node]:
+                if not vis[i]:
+                    dfs_fun(i)
+            
+        n = len(adj)
+        dfs =[]
+        vis =[0 for i in range(n)]
+        dfs_fun(0)
+        return dfs
