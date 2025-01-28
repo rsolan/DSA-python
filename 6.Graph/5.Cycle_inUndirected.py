@@ -10,8 +10,11 @@ class Solution:
         1 -> 0,2,4
         0->, 2->3 , 4 ->3
         so queue has 2 calss for 3 at same time - so there exist a cycle
-        '''
         
+        # tc - o(n+2e) for bfs fun + o(n) for n cals in for loop
+        # sc - o(n)
+	'''
+		
         n = len(adj)
         vis = [0 for i in range(n)]
         q = deque()
@@ -40,3 +43,4 @@ class Solution:
                     return 1
                 
         return 0
+        
