@@ -1,3 +1,6 @@
+
+# leetcode 323, 547
+
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         #  no of connected compononets - traverse(3)- 3 starting nodes - > 3 travesal call - just count them
