@@ -1,6 +1,7 @@
 # https://www.geeksforgeeks.org/problems/topological-sort/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=topological-sort
 
-#Function to return list containing vertices in Topological order.
+#Function to return list containing vertices in Topological order. 
+# STORE THE POPEL WHOSE DFS IS COMPLEETED - WHERE - IN STACK
     def topologicalSort(self,adj):
         # Code here
         # adjacency list for a Directed Acyclic Graph (DAG)
