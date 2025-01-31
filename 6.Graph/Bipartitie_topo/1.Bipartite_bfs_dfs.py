@@ -45,12 +45,12 @@ class Solution:
                         vcolor[neigh]  = not vcolor[node]
                         q.append(neigh)
                     elif vcolor[neigh] == vcolor[node]: #neigh visited and has same color as of current node
-                        return False
+                        return False #- cycle detected
             return True
 
         for i in range(n): #for multicomponents
             if vcolor[i] == -1:
-                if bfs(i) == False:
+                if bfs(i) == False:  #- cycle detected and thus not bipartite
                     return False
 
         return True
