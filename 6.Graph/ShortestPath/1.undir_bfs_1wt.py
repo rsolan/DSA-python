@@ -7,6 +7,7 @@ dist is unit - so old dist +1
 update only when smaller distance - and then push those neigh in que
 unreachable nodes - inf - mark them as -1
 '''
+
 from collections import deque
 class Solution:
     def shortestPath(self, adj, src):
@@ -18,7 +19,28 @@ class Solution:
         # m2 - use bfs - q already sorted as distance wil linc by 1 at each level
         
         q = deque()
-        q.append((src,0))  #node,dist
+        q.append(src)  #node
+        dist =[float('inf') for i in range(len(adj))]
+        dist[src] = 0
+        while q:
+            node = q.popleft()
+           
+            for i in adj[node]:
+                if dist[node] +1 < dist[i]:
+                    dist[i] = dist[node] + 1
+                    q.append(i)
+        for i in range(len(dist)):
+            if dist[i] == float('inf'):
+                dist[i] = -1
+        return dist
+'''
+
+from collections import deque
+class Solution:
+    def shortestPath(self, adj, src):
+      
+        q = deque() 
+        q.append((src,0))  #node,dist   ---NO NEED TO STORE DIST IN Q AS WE HAVE DIST ARRAY
         dist =[float('inf') for i in range(len(adj))]
         dist[src] = 0
         while q:
