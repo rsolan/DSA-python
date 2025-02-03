@@ -20,7 +20,7 @@ print(q.get())  # Dequeue -> 1
 print(q.qsize())  # 2
 
 
-
+# Lists can be used, but pop(0) is slow (O(n) time complexity).
 queue = []
 queue.append(1)
 queue.append(2)
