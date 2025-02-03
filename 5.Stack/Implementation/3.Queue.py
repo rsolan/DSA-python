@@ -8,6 +8,14 @@ queue.append(3)
 print(queue.popleft())  # Dequeue -> 1
 print(queue)  # deque([2, 3])
 
+queue = deque([1, 2, 3])
+print(len(queue))  # Output: 3 - size
+print(queue[0])  # Front element -> 1
+print(queue[-1])  # Rear element -> 3
+
+
+
+
 
 from queue import Queue
 
