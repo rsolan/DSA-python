@@ -12,15 +12,16 @@ class Solution:
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
+        #  i am standing at node alread y - so idont know prev of this node
+        # NODE = 5
+        nextnode = node.next.next #9
+        node.val = node.next.val #1
+        # 5-1-9
+        # 1-1-9
+        node.next = nextnode
 
-        temp = self.head
-        while temp.next.data != node.data:
-            temp = temp.next
-        deletednode = temp.next
-        temp.next = temp.next.next
-        deletednode = None
 
-        return head
+        
         
 
         
@@ -43,7 +44,19 @@ def end()
     temp = head
     while temp.next.next:
         temp = temp.next
-    temp.next = None'''
+    temp.next = None
+    
+del pso 
+        temp = self.head
+        while temp.next.data != node.data:
+            temp = temp.next
+        deletednode = temp.next
+        temp.next = temp.next.next
+        deletednode = None
+
+        return head
+        
+        '''
 
 
 
