@@ -30,4 +30,8 @@ STORED IN ARRAY
   left child - 2i+1
   right child - 2i+2
 
+
+  diff btw heappsuh and heapify
+  visualalgo
+
   '''
