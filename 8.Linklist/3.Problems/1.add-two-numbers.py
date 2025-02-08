@@ -1,6 +1,6 @@
 https://leetcode.com/problems/add-two-numbers/
 
-# tc- o(n1+n2) sc - o(n
+# tc,sc -- max(n1,n2)
 
 # Definition for singly-linked list.
 # class ListNode:
