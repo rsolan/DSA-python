@@ -31,7 +31,7 @@ class Solution:
         #     m1 = heapq.heappop(heap)
         #     if heap:
         #         m2 = heapq.heappop(heap)
-        #     sumj = m1+m2
+        #     sumj = m1+m2   3- wont work as m2 cant be addedd - so need extra check
         #     # print(heap)
         #     if heap:
         #         heapq.heappush(heap,sumj)
