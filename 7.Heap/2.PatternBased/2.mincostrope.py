@@ -20,7 +20,7 @@ class Solution:
             sumj = m1+m2
             
             # print(heap)
-            if heap:
+            if heap:   #otherwise infinite loop
                 heapq.heappush(heap,sumj)
             
             ans = ans+sumj
