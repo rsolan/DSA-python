@@ -4,7 +4,25 @@ import heapq
 class Solution:
     def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:
 
+        # m2
+        h = heights
+        n = len(h)
+        heap=[]
+        for i in range(1,n):
+            if h[i-1] >=h[i]:
+                continue
+            heapq.heappush(heap,h[i] - h[i-1])
 
+            if len(heap)>ladders:
+                bricks-=heapq.heappop(heap)
+            
+            if bricks<0:
+                return i-1
+
+        # if all bricks are NOT used and u traversed whole array 
+        return n-1
+
+        '''
         # heights = [4,12,2,7,3,18,20,3,19], 
         #            0 8  0 5 0  15 2 0 16    - differnce
         # sequentially
@@ -38,6 +56,14 @@ class Solution:
             return ind
         else:
             return ind+1   # n-1
+
+        '''
+
+
+        
+
+
+
 
 
 
