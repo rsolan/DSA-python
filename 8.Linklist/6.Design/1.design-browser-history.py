@@ -1,6 +1,5 @@
 https://leetcode.com/problems/design-browser-history/
 
-
 # Definition for a Node. -- u have to do this
 class Node:
     def __init__(self, x: str, next: 'Node' = None, prev: 'Node' = None):
@@ -10,16 +9,16 @@ class Node:
         
 class BrowserHistory:
 
-    def __init__(self, homepage: str):
+    def __init__(self, homepage: str): #o(1)
         self.current = Node(homepage)
 
-    def visit(self, url: str) -> None:
+    def visit(self, url: str) -> None: #o(1)
         nn = Node(url)
         self.current.next = nn
         nn.prev = self.current
         self.current = nn
 
-    def back(self, steps: int) -> str:
+    def back(self, steps: int) -> str: #o(steps)
         while steps:
             if self.current.prev:
                 self.current = self.current.prev
@@ -29,7 +28,7 @@ class BrowserHistory:
         return self.current.val
         
 
-    def forward(self, steps: int) -> str:
+    def forward(self, steps: int) -> str: #o(steps)
         while steps:
             if self.current.next:
                 self.current = self.current.next
