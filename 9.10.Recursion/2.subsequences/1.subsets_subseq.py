@@ -1,6 +1,6 @@
 # subsequence - contigous/non-contigous seq which follows the order
 3 el - 2^3 = 8 subseq
-[312]  -> [] , 312 , 3 , 1 ,2 , 31,12, 32
+[312]  -> [] , 312 , 3 , 1 ,2 , 31,12, 32   ---->power set
 # sub array - need to be contigous (and follows order
 
 
