@@ -1,10 +1,10 @@
-Notes to Self :-
 All possible patters from Subsequence
 
 1. Print All the Subsequence
 2. Print all Sq which sums to K
 3. Print only 1st Sq which sums to K
 4. Print the count of Sq which sums to K
+tc - 2^n - 2 option for each index t/nt
 
 
 1) COUNT FOR HOW MANY SUM == K
@@ -34,6 +34,7 @@ class Solution:
 		# code here
 		def rec(ind,arr,s):
 		    n = len(arr)
+	            if s> sum : return 0
 		    if ind == n:
 		        if s == target:
 		            return 1
@@ -115,5 +116,3 @@ def isSubsetPresent(n:int, k: int, arr: List[int]) -> bool:
 
 
 
-3) PRINT ALL WHOSE SUM = K
-https://leetcode.com/problems/combination-sum/
