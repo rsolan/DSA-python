@@ -4,6 +4,9 @@
 # sub array - need to be contigous (and follows order
 
 
+
+tc - 2^n - 2 option for each index t/nt
+
 https://leetcode.com/problems/subsets/
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
