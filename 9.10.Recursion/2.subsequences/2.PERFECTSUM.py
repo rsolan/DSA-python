@@ -115,4 +115,32 @@ def isSubsetPresent(n:int, k: int, arr: List[int]) -> bool:
     return False
 
 
+3) print patterns whose sum = k
+class Solution:
+    def print(self, arr: List[int], target: int) -> List[List[int]]:
+        
+        def rec(ind,arr,ans,s,out):
+            n = len(arr)
+            # if ind == n:
+            if s == target:
+                out.append(ans[:])
+                return
+
+            # if s > target or ind>=n:
+            #     return
+                    
+            ans.append(arr[ind])
+            s = s+arr[ind]
+            rec(ind+1,arr,ans,s,out)
+            
+            s = s-arr[ind]
+            ans.pop()
+            rec(ind+1,arr,ans,s,out)
+
+            return out
+                
+        out = []
+        ans = []
+        s=0
+        return rec(0,arr,ans,s,out)
 
