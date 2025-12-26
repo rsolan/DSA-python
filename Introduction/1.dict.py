@@ -16,3 +16,9 @@ d = defaultdict(lambda:-1)
 d = defaultdict(lambda:0)
 d = defaultdict(lambda:[])
 
+
+
+# IMP --- while reversing --> i corresponds to n-i-1 in array/string
+i = n-i-1
+
+
