@@ -2,7 +2,7 @@
 # reverse using itr - use i and j from 0 and n -->keep on swapping till they collide
 # 2 pointer
 def rev(l,r):
-    if l>=r:
+    if l>=r:   # > for even , = for odd
         return
     arr[l],arr[r] = arr[r],arr[l]
     rev(l+1,r-1)
