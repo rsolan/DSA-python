@@ -1,9 +1,40 @@
-# subsets question
+# 1 subsets question
 
 
 https://leetcode.com/problems/subsets/  
 integer array nums of unique elements, return all possible subsets(the power set).
-        
+
+
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        ds =[]
+        ans =[]
+        n = len(nums)
+
+
+        def rec(i,ds):
+            if i == n:
+                ans.append(ds[:])  # pass copy ds[:]. and not refernce of ds ie ds
+                # 1why ans.append(ds)  is wrong
+                return  #2 why 'return ans' is wrong you cant return ans for each end call , so just here do simple 'return'
+
+
+            # copy
+            ls1= ds[:] # include
+            ls2 = ds[:]  # exclude
+
+            
+            ls1.append(nums[i]) # 3 MODIFY COPY LS1 and not reference ds
+            rec(i+1,ls1)
+            rec(i+1,ls2)
+
+        rec(0,ds)
+        return ans
+
+        # 4 return rec(0,ds) - u r not returning inside rec func - so store in ans one by one and then in end return ans
+
+
 
 
 
