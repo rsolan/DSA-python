@@ -34,6 +34,14 @@ class Solution:
 
         # 4 return rec(0,ds) - u r not returning inside rec func - so store in ans one by one and then in end return ans
 
+'''
+#  imp - 
+ds keeps on changing recursion 
+so ds can change when kept inside ans also
+so we store copy of ds in ans
+ans.append(ds[:])  # pass copy ds[:]. and not refernce of ds ie ds
+'''
+
 
 
 
