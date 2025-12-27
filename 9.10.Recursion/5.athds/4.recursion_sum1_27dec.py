@@ -115,3 +115,166 @@ This is exactly how power set = 2ⁿ is formed.
 =======
 
 
+
+
+
+
+
+
+
+                   
+
+# 2 subset2 
+
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        ds =[]
+        ans = set() # 1 use sets so ans doesnt have duplicates
+        n = len(nums)
+
+        def rec(i,ds):
+            if i ==n:
+                ans.add(tuple(ds[:]))
+                # add for sets and not append - wrong ans.append(ds[:]) 
+                #  2 u cannt add list to ans set - wrong ans.add(ds[:])  - TypeError: unhashable type: 'list'
+                return
+            
+            ls1=ds[:]
+            ls2 = ds[:]
+
+            ls1.append(nums[i])
+            rec(i+1,ls1)
+            rec(i+1,ls2)
+
+        # 3 - vvvimp -- sort nums
+        nums.sort()
+        rec(0,ds)
+        return list(ans)
+
+
+
+'''
+
+✅ Why set works
+
+A set:
+
+Stores unique elements only
+
+Automatically removes duplicates
+
+out = set()
+out.add(...)
+
+
+If the same subset appears again → it is ignored
+
+✔ This solves the duplicate-subset problem.
+
+
+==
+
+Why do we sort nums?
+Without sorting
+nums = [2, 1, 2]
+
+
+Possible subsets:
+
+[2,1]  and  [1,2]
+
+
+These are logically the same subset, but Python thinks they are different.
+
+After sorting
+nums = [1, 2, 2]
+
+
+Now:
+
+[1,2] and [1,2]  → identical
+
+
+✔ Sorting ensures same elements appear in same order, so duplicates match.
+
+
+===
+
+
+
+3️⃣ Why do we add a tuple to the set?
+🚫 Why NOT ds[:] directly?
+out.add(ds[:])  ❌ ERROR
+
+
+Python error:
+
+TypeError: unhashable type: 'list'
+
+🔑 Key Rule in Python
+
+set can only store hashable (immutable) types.  ---- set dont have index
+
+list is mutable → unhashable
+
+tuple is immutable → hashable
+
+✅ Correct way
+out.add(tuple(ds[:]))
+
+
+You are converting:
+
+[1, 2] → (1, 2)
+
+
+Now Python can:
+
+Hash it
+
+Compare it
+
+Store it uniquely
+
+4️⃣ Why do we still use ds[:] before tuple?
+Reason
+
+ds changes during recursion.
+
+If you do:
+
+out.add(tuple(ds))
+
+
+This usually works, but best practice is:
+
+out.add(tuple(ds[:]))
+
+
+Because:
+
+ds[:] → snapshot of current subset
+
+No accidental mutation issues
+
+Clear intent
+
+5️⃣ Putting it all together
+if i == n:
+    out.add(tuple(ds[:]))
+
+
+✔ ds[:] → make a copy
+✔ tuple(...) → make it immutable
+✔ out.add(...) → store unique subsets
+
+
+
+
+Final Summary
+Concept	Why
+set	removes duplicate subsets
+sort()	ensures same order for duplicates
+tuple()	lists are unhashable
+ds[:]	safe snapshot of current subset
+'''
