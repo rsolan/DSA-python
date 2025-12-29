@@ -1,3 +1,32 @@
+
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        ds=[]
+        out=[]
+        n = len(candidates)
+        def rec(i,s,ds):
+            if i==n and s==target:
+                out.append(ds[:])
+                return
+            
+            if i==n:
+                return
+            if s>target:
+                return
+
+            ls1=ds[:]
+            ls2=ds[:]
+            ls1.append(candidates[i])
+
+            rec(i,s+candidates[i],ls1).  # i as i can be taken more than once
+            rec(i+1,s,ls2)
+
+        #no duplicates so no sort
+        rec(0,0,ds)
+        return out
+      
+  
+
 Yes 👍 — let’s draw the Combination Sum recursion tree in the same visual level-by-level style you asked for.
 
 Example
@@ -102,3 +131,9 @@ Why order doesn’t matter
 Why reuse works (rec(i, ...))
 
 Why pruning saves time
+
+                   =====
+
+
+
+
