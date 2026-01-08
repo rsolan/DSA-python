@@ -12,7 +12,7 @@ class Solution:
         # when n>>k - nlogk faster in comparison to nlogn
 
         for i in nums:
-            heapq.heappush(heap,i)
+            heapq.heappush(heap,i)  -- first do min heapfiy even if more than k , then pop
             if len(heap)>k:
                 heapq.heappop(heap)
         # print(heap)
