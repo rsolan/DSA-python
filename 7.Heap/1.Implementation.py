@@ -149,7 +149,7 @@ Step 3: Bubble DOWN
 
 Compare 3 with children 2 and 5
 
-Smallest child = 2
+Smallest child = 2  ----------------->> SMALLEST OF BOTH CHILD
 
 Swap
 
