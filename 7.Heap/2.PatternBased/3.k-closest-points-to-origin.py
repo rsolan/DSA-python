@@ -29,6 +29,32 @@ class Solution:
         return out
 
 
+
+=== comments
+import heapq
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        # we can take 3d tuple heap = (-distance,elementx,elementy) , 
+        # form a max heap - pop max distanced element
+        # return max heap with k min elements
+
+        heap =[]
+
+        for u,v in points:
+            dist = ((u**2) + (v**2))**(1/2)
+            heapq.heappush(heap, (-dist,u,v)) #need to be (-dist,u,v) 1elelement
+            if len(heap)>k:
+                heapq.heappop(heap)
+
+        out=[]
+        while heap:
+            dist,u,v= heapq.heappop(heap) # dist,u,v
+            out.append((u,v)) # (u,v) instead of u,v -> 1 el instead of 2
+
+        return out
+
+
+        
         
 
 
