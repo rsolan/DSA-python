@@ -38,3 +38,8 @@ class Solution:
            
         #     ans = ans+sumj
         # return ans
+
+
+---
+for len - 1 will not go in while loop
+for len>1 -- will always have 2 element and then 0  at summ line 
