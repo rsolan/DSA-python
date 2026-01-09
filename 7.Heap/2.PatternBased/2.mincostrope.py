@@ -13,7 +13,7 @@ class Solution:
         for i in arr:
             heapq.heappush(heap,i)
             
-        while len(heap)>1:
+        while len(heap)>1:  
             m1 = heapq.heappop(heap)
             m2 = heapq.heappop(heap)
             
@@ -27,14 +27,14 @@ class Solution:
         return ans
         
         
-        # while heap:
+        # while heap: - ---------------1 vvimmppp will not work
         #     m1 = heapq.heappop(heap)
-        #     if heap:
+        #     if heap:  - ---------------3 vnot needed atall
         #         m2 = heapq.heappop(heap)
-        #     sumj = m1+m2   3- wont work as m2 cant be addedd - so need extra check
+        #     sumj = m1+m2   4- wont work as m2 cant be addedd - so need extra check - cehcek 1
         #     # print(heap)
         #     if heap:
-        #         heapq.heappush(heap,sumj)
+        #         heapq.heappush(heap,sumj)  - ---------------2 vvimmppp neededed 
            
         #     ans = ans+sumj
         # return ans
