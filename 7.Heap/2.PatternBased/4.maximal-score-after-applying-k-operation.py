@@ -22,3 +22,25 @@ class Solution:
 
 
         return score
+
+==with comments 
+import heapq
+class Solution:
+    def maxKelements(self, nums: List[int], k: int) -> int:
+        # max heap - top pr max hoga , 
+        # k operaion of inc score by maximum elements and then pushing back num/3
+
+        score = 0
+        heap =[]
+        for i in nums:
+            heapq.heappush(heap,-i) #form a max heap
+
+        while k:  #imp condition 
+            root = -heapq.heappop(heap)  # - imp as -(-10)
+            score = score + root
+            heapq.heappush(heap,-ceil(root/3)) # insert again neg element
+            k-=1 #sub 
+
+        return score
+
+
