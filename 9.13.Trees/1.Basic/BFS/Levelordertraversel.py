@@ -11,6 +11,9 @@ DFS:
 
 
 https://leetcode.com/problems/binary-tree-level-order-traversal/
+
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -34,12 +37,14 @@ class Solution:
 
             for i in range(curr_sizeq):
                 node=q.popleft() #pop from q -popleft
-                curr_ansl.append(node.val) #store ans first as node pointer will change
+                # curr_ansl.append(node.val) #store ans first as node pointer will change- can be placed on l30 also 
 
                 if node.left:
                     q.append(node.left) # q = empty,15
                 if node.right:
                     q.append(node.right) #q=empty,7
+                curr_ansl.append(node.val) #store ans first as node pointer will change
+
             ans.append(curr_ansl)
 
         return ans
