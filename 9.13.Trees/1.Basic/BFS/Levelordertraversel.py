@@ -2,9 +2,9 @@
 TRAVERSAL
 
 BFS:
-  level-order  
+  level-order  (queue)
 DFS: 
-  preorder,inorder,postorder
+  preorder,inorder,postorder  (recursive,stack)
 
 
 '''
